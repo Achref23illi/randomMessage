@@ -11,10 +11,41 @@ const quotes = [
     "Strength does not come from winning. Your struggles develop your strengths. When you go through hardships and decide not to surrender, that is strength."
 ]
 
-const generateMessage = () => {
-    const randomQuote = Math.floor(Math.random() * quotes.length);
+const authors = [
+    "Walt Disney",
+    "Eleanor Roosevelt",
+    "Joan Collins",
+    "Truman Capote",
+    "Zig Ziglar",
+    "Theodore Roosevelt",
+    "Stephen King",
+    "Martin Luther King Jr.",
+    "Napoleon Hill",
+    "Arnold Schwarzenegger"
+]
 
-    return quotes[randomQuote];
+const rules = [
+    "Rule 1",
+    "Rule 2",
+    "Rule 3",
+    "Rule 4",
+    "Rule 5",
+    "Rule 6",
+    "Rule 7",
+    "Rule 8",
+    "Rule 9",
+    "Rule 10"
+]
+
+const generateMessage = () => {
+    const randomQuoteIndex = Math.floor(Math.random() * quotes.length);
+    const randomQuote = quotes[randomQuoteIndex];
+    const randomAuthor = authors[randomQuoteIndex];
+    
+    const randomRuleIndex = Math.floor(Math.random() * rules.length);
+    const randomRule = rules[randomRuleIndex];
+
+    return `${randomRule} : ${randomQuote} - ${randomAuthor}`;
 }
 
 console.log(generateMessage());
